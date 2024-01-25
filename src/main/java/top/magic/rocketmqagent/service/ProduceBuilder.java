@@ -6,12 +6,15 @@ import org.apache.rocketmq.acl.common.AclClientRPCHook;
 import org.apache.rocketmq.acl.common.SessionCredentials;
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
 @Service
 public class ProduceBuilder {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ProduceBuilder.class);
     private final Map<String, DefaultMQProducer> producerMap = Maps.newConcurrentMap();
 
     public DefaultMQProducer getMQProducer(String url, String ak, String sk) throws MQClientException {
@@ -24,6 +27,13 @@ public class ProduceBuilder {
             return producerMap.get(url);
         }
         return generateMQProducer(url, ak, sk);
+    }
+
+    public void shutDownAllProducer() {
+        for (Map.Entry<String, DefaultMQProducer> mqProducerEntry : producerMap.entrySet()) {
+            mqProducerEntry.getValue().shutdown();
+        }
+        LOGGER.info("rocketmq producer has bean down");
     }
 
 

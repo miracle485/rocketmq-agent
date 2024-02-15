@@ -24,6 +24,10 @@ public enum MsgSendErrCode {
         return new MsgSendResponse(code.getCode(), code.getMsg());
     }
 
+    public static MsgSendResponse success(){
+        return handleResponse(MsgSendErrCode.OK);
+    }
+
     public int getCode() {
         return code;
     }

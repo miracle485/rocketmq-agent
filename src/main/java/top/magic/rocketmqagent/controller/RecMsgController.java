@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 import top.magic.rocketmqagent.model.MsgInfo;
 import top.magic.rocketmqagent.model.MsgSendResponse;
 import top.magic.rocketmqagent.model.errorcode.MsgSendErrCode;
-import top.magic.rocketmqagent.service.MsgWriteFileService;
 import top.magic.rocketmqagent.service.SendMsgService;
 
 import javax.annotation.Resource;

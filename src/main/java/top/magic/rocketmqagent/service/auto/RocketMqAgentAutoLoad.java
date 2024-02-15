@@ -5,14 +5,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import top.magic.rocketmqagent.model.config.AgentConfig;
+import top.magic.rocketmqagent.model.result.StoreMsgResult;
+
+import javax.annotation.Resource;
 
 @Configuration
-public class BeanAutoLoad {
-    private static final Logger LOGGER = LoggerFactory.getLogger(BeanAutoLoad.class);
+public class RocketMqAgentAutoLoad {
+    private static final Logger LOGGER = LoggerFactory.getLogger(RocketMqAgentAutoLoad.class);
 
-    @Bean
-    public AgentConfig getMsgFile() {
-        LOGGER.error("test");
-        return null;
-    }
+
 }

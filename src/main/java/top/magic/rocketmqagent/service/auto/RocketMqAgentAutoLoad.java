@@ -13,5 +13,4 @@ import javax.annotation.Resource;
 public class RocketMqAgentAutoLoad {
     private static final Logger LOGGER = LoggerFactory.getLogger(RocketMqAgentAutoLoad.class);
 
-
 }

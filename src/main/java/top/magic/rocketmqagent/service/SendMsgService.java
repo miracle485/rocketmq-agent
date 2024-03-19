@@ -32,7 +32,7 @@ public class SendMsgService {
             SendResult send = mqProducer.send(message);
             SendStatus sendStatus = send.getSendStatus();
             if (sendStatus == SendStatus.SEND_OK) {
-                return MsgSendErrCode.handleResponse(MsgSendErrCode.OK);
+                return MsgSendErrCode.success();
             }
         } catch (Exception e) {
             LOGGER.error("error when send msg to service , cluster is {} ,error is ", msgInfo.getClusterUrl(), e);

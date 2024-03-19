@@ -4,6 +4,7 @@ import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import top.magic.rocketmqagent.util.FileUtils;
 import org.springframework.stereotype.Service;
 
 import java.io.File;

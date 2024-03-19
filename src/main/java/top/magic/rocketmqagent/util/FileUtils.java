@@ -1,4 +1,4 @@
-package top.magic.rocketmqagent.service.store;
+package top.magic.rocketmqagent.util;
 
 import java.io.File;
 

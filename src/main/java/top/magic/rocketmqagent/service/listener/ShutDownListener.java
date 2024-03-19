@@ -4,7 +4,6 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextClosedEvent;
 import org.springframework.stereotype.Service;
 import top.magic.rocketmqagent.service.ProduceBuilder;
-import top.magic.rocketmqagent.service.store.MsgFileQueue;
 
 import javax.annotation.Resource;
 
@@ -14,11 +13,9 @@ import javax.annotation.Resource;
  **/
 @Service
 public class ShutDownListener implements ApplicationListener<ContextClosedEvent> {
-    //@Resource
+    @Resource
     private ProduceBuilder mqProducer;
 
-    @Resource
-    private MsgFileQueue fileQueue;
 
     @Override
     public void onApplicationEvent(ContextClosedEvent event) {

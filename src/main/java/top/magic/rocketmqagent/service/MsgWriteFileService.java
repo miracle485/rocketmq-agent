@@ -1,6 +1,7 @@
 package top.magic.rocketmqagent.service;
 
 import org.springframework.stereotype.Service;
+import top.magic.rocketmqagent.model.MsgFileData;
 import top.magic.rocketmqagent.model.MsgInfo;
 import top.magic.rocketmqagent.service.store.MsgFileQueue;
 
@@ -13,6 +14,7 @@ public class MsgWriteFileService {
     private MsgFileQueue msgFileQueue;
 
     public boolean writeMsg2FileWhenSendFail(MsgInfo msgInfo) {
+        MsgFileData msgFileData = new MsgFileData();
 
         return true;
     }

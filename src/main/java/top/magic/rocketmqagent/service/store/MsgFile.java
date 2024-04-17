@@ -73,6 +73,10 @@ public class MsgFile {
             return false;
         }
     }
+    public boolean writeData(int position){
+
+        return true;
+    }
 
 
     public String getFileName() {
